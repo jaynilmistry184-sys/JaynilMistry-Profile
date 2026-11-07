@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaynil Mistry · Aspiring Data Analyst</title>
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--text:#12142a;--muted:#5b6080;--line:#e3e5f0;--accent:#5b5bf0;--accent2:#14b8a6;--glow:rgba(91,91,240,.15);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0f1c;--surface:#171a2d;--text:#eef0ff;--muted:#9aa0c3;--line:#2a2e4a;--accent:#8b8bff;--accent2:#2dd4bf;--glow:rgba(139,139,255,.18);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0f1c;--surface:#171a2d;--text:#eef0ff;--muted:#9aa0c3;--line:#2a2e4a;--accent:#8b8bff;--accent2:#2dd4bf;--glow:rgba(139,139,255,.18);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav b{letter-spacing:.3px}
+nav div{display:flex;gap:18px;align-items:center;font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+#theme{background:var(--surface);border:1px solid var(--line);border-radius:999px;width:36px;height:36px;color:var(--text)}
+.hero{padding:84px 0 56px;position:relative}
+.hero:before{content:"";position:absolute;inset:-40px 0 auto;height:360px;background:radial-gradient(60% 70% at 30% 20%,var(--glow),transparent 70%);z-index:-1}
+.tag{display:inline-block;font-size:13px;color:var(--accent);border:1px solid var(--line);background:var(--surface);padding:4px 12px;border-radius:999px}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.05;margin:16px 0 10px;letter-spacing:-1.5px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(18px,3vw,24px);color:var(--muted);min-height:1.6em}
+.role em{color:var(--text);font-style:normal;border-right:2px solid var(--accent);padding-right:3px}
+.lead{max-width:640px;color:var(--muted);margin:18px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-weight:600;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.p{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat strong{display:block;font-size:30px;color:var(--accent)}
+.stat small{color:var(--muted)}
+section{padding:52px 0}
+h2{font-size:28px;margin:0 0 6px;letter-spacing:-.5px}
+.sub{color:var(--muted);margin:0 0 24px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:7px 15px;font-size:14px;transition:.2s}
+.chip:hover{border-color:var(--accent)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.grp{margin:0 0 18px}
+.grp h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:0 0 10px}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px var(--glow)}
+.card.dim{opacity:.35;transform:scale(.98)}
+.card h3{margin:0;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--muted)}
+.tags span.hit{border-color:var(--accent);color:var(--accent)}
+.more{display:none;border-top:1px dashed var(--line);padding-top:10px;font-size:14px;color:var(--muted)}
+.more ol{margin:0;padding-left:18px}
+.card.open .more{display:block}
+.row{display:flex;gap:10px;margin-top:auto}
+.row a,.row button{flex:1;text-align:center;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:14px}
+.row a:hover,.row button:hover{border-color:var(--accent);color:var(--accent)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+@media(max-width:720px){.about{grid-template-columns:1fr}nav div a.h{display:none}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.box ul{margin:0;padding-left:18px;color:var(--muted)}
+.box li{margin:6px 0}
+.contact{text-align:center}
+.contact .cta{justify-content:center}
+footer{padding:30px 0 40px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(18px);transition:.6s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>JM<span style="color:var(--accent)">.</span></b>
+<div><a class="h" href="#about">About</a><a class="h" href="#skills">Skills</a><a class="h" href="#projects">Projects</a><a class="h" href="#contact">Contact</a><button id="theme" aria-label="Toggle theme">◐</button></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<span class="tag">Open to entry-level roles · Mumbai, India</span>
+<h1>Hi, I’m <span>Jaynil Mistry</span></h1>
+<div class="role">I turn data into <em id="typed"></em></div>
+<p class="lead">Aspiring Data Analyst with hands-on experience in data cleaning, analysis and dashboard reporting using Advanced Excel, SQL, Power BI and Python.</p>
+<div class="cta"><a class="btn p" href="#projects">View projects</a><a class="btn" href="https://github.com/jaynilmistry184-sys" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="#contact">Get in touch</a></div>
+<div class="stats">
+<div class="stat"><strong data-n="3">0</strong><small>Portfolio projects</small></div>
+<div class="stat"><strong data-n="7000" data-s="+">0</strong><small>Hospital records analysed</small></div>
+<div class="stat"><strong data-n="4">0</strong><small>Core analytics tools</small></div>
+</div></div></header>
+
+<section id="about"><div class="wrap rv"><h2>About me</h2><p class="sub">Self-driven, project-first learner.</p>
+<div class="about">
+<div class="box"><p style="margin-top:0;color:var(--muted)">I build self-driven projects on real-world datasets, covering customer experience analytics, sales analysis and automated reporting workflows using custom Python packages. I enjoy turning raw, messy data into clear insights that support business decisions.</p>
+<p style="margin-bottom:0;color:var(--muted)">I’m looking for an entry-level <b style="color:var(--text)">Data Analyst / Business Analyst</b> role where I can apply my skills in a real business environment.</p></div>
+<div class="box"><b>What I focus on</b><ul><li>Data cleaning &amp; validation</li><li>Dashboards &amp; KPI reporting</li><li>Exploratory analysis</li><li>Process automation</li></ul></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap rv"><h2>Skills</h2><p class="sub">Tap a skill to see which projects use it.</p>
+<div class="grp"><h3>Analytics</h3><div class="chips" data-g></div></div>
+<div class="grp"><h3>Libraries</h3><div class="chips" data-g></div></div>
+<div class="grp"><h3>Software</h3><div class="chips" data-g></div></div>
+<div class="hint" id="hint"></div></div></section>
+
+<section id="projects"><div class="wrap rv"><h2>Projects</h2><p class="sub">Each one links to its GitHub repository.</p>
+<div class="grid" id="grid"></div></div></section>
+
+<section id="contact"><div class="wrap rv contact"><div class="box"><h2>Let’s work together</h2><p class="sub">I’d love to hear about analyst opportunities.</p>
+<div class="cta"><a class="btn p" href="mailto:jayneelmistry184@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/jaynil-mistry-497a4a447" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/jaynilmistry184-sys" target="_blank" rel="noopener">GitHub ↗</a></div></div></div></section>
+
+<footer>© <span id="yr"></span> Jaynil Mistry · Built with curiosity and data</footer>
+
+<script>
+var P=[
+{t:"Blinkit Sales Data Analysis",d:"An interactive Power BI dashboard analysing Blinkit data trends, KPIs and overall business performance.",k:["Power BI","DAX","Power Query"],u:"https://github.com/jaynilmistry184-sys/Blink-It-Dashboard"},
+{t:"Hospital Data Analysis",d:"End-to-end Python analysis of 7,000+ hospital admissions: cleaning, feature engineering, EDA, hypothesis testing, outlier detection and length-of-stay prediction.",k:["Python","Pandas","Matplotlib","Seaborn","scikit-learn"],u:"https://github.com/jaynilmistry184-sys/Hospital-data-cleaning-",m:["Clean &amp; validate raw data with built-in quality checks","Engineer business metrics (cost per day, coverage %, stay category)","Explore demand, revenue, stay length, insurance and feedback","Test differences with non-parametric tests and effect sizes","Flag outliers without deleting real cases","Predict length of stay with a leakage-free Random Forest"]},
+{t:"HOOKd Brand Analysis",d:"A dark-theme Executive Growth and Revenue Dashboard for HOOKd, India’s first high-protein baked chicken chips brand.",k:["Power BI","DAX","Power Query"],u:"https://github.com/jaynilmistry184-sys/Hookd-Brand-Analysis"}];
+var S=[["Advanced Excel","SQL","Python","Power BI","DAX","Power Query"],["Pandas","NumPy","Matplotlib","Seaborn","Plotly Express","scikit-learn"],["Microsoft Excel","MySQL Workbench","Visual Studio Code","Jupyter Notebook","Google Colab"]];
+var sel=null;
+function $(s,r){return (r||document).querySelector(s)}
+var grid=$("#grid");
+P.forEach(function(p,i){
+ var c=document.createElement("div");c.className="card";
+ c.innerHTML='<h3>'+p.t+'</h3><p>'+p.d+'</p><div class="tags">'+p.k.map(function(x){return '<span data-k="'+x+'">'+x+'</span>'}).join("")+'</div>'+(p.m?'<div class="more"><ol>'+p.m.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol></div>':'')+'<div class="row">'+(p.m?'<button data-tg>How it works</button>':'')+'<a href="'+p.u+'" target="_blank" rel="noopener">GitHub ↗</a></div>';
+ grid.appendChild(c);p.el=c;
+ var b=$("[data-tg]",c);if(b)b.onclick=function(){var o=c.classList.toggle("open");b.textContent=o?"Hide details":"How it works"};
+});
+document.querySelectorAll("[data-g]").forEach(function(box,i){
+ S[i].forEach(function(s){var b=document.createElement("button");b.className="chip";b.textContent=s;b.onclick=function(){pick(s)};box.appendChild(b)});
+});
+function pick(s){
+ sel=(sel===s)?null:s;
+ document.querySelectorAll(".chip").forEach(function(c){c.classList.toggle("on",c.textContent===sel)});
+ var n=0;
+ P.forEach(function(p){var hit=sel&&p.k.indexOf(sel)>-1;if(hit)n++;p.el.classList.toggle("dim",!!sel&&!hit);
+  p.el.querySelectorAll(".tags span").forEach(function(t){t.classList.toggle("hit",t.dataset.k===sel)})});
+ $("#hint").textContent=sel?(n?sel+" is used in "+n+" project"+(n>1?"s":"")+" below.":sel+" is part of my toolkit; no project is tagged with it yet."):"";
+ if(sel&&n)$("#projects").scrollIntoView({behavior:"smooth"});
+}
+var words=["clear dashboards","business insights","clean datasets","better decisions"],wi=0,ci=0,del=false,ty=$("#typed");
+function tick(){var w=words[wi];ci+=del?-1:1;ty.textContent=w.slice(0,ci);var s=del?35:80;
+ if(!del&&ci===w.length){del=true;s=1400}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;s=300}setTimeout(tick,s)}
+if(matchMedia("(prefers-reduced-motion:reduce)").matches){ty.textContent=words[0]}else{tick()}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(e){io.observe(e)});
+document.querySelectorAll("[data-n]").forEach(function(el){
+ var n=+el.dataset.n,sfx=el.dataset.s||"",t0=null;
+ function f(t){if(!t0)t0=t;var k=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*k).toLocaleString()+(k===1?sfx:"");if(k<1)requestAnimationFrame(f)}
+ requestAnimationFrame(f)});
+var root=document.documentElement;
+try{var sv=localStorage.getItem("jm-theme");if(sv)root.setAttribute("data-theme",sv)}catch(e){}
+$("#theme").onclick=function(){
+ var dark=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+ var nx=dark?"light":"dark";root.setAttribute("data-theme",nx);try{localStorage.setItem("jm-theme",nx)}catch(e){}};
+$("#yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
